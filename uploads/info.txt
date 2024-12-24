@@ -1,0 +1,1 @@
+Dentro de este directorio son almacenados los resultados obtenidos por la API
