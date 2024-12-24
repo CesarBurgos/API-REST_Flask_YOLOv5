@@ -1,0 +1,159 @@
+<html>
+  <head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title> Ejecución del Modelo YOLOv5 </title>
+    <style>
+      html{
+          width: 100%;
+          height: 100vh;
+          overflow:auto;
+          margin: 0;
+          padding: 0;
+      }
+      
+      .flex_column{
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+      }
+      
+      body{
+          background-color: rgb(233, 233, 233);
+          width: 100%;
+          height: 100%;
+          padding: 0;
+          margin: 0;
+          overflow: hidden;
+      }
+      
+      footer{
+          width: 100%;
+          height: 100%;
+          border-top: 2px solid gray;
+          background-color: black;
+      }
+      
+      h1, h2, h3, h4{
+          font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+          margin-bottom: 0;
+          width: 90%;
+          text-overflow: clip;
+      }
+      
+      input, p{
+          width: 90%;
+          font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+      }
+      
+      .contenido{
+          width: 100%;
+          height: 100%;
+      }
+      
+      .apartado{
+          background-color: rgb(245, 245, 245);
+          box-shadow: 3px 3px 9px black;
+          margin: 0 5px;
+          margin-bottom: 15px;
+          padding: 0 15px;
+          width: fit-content;
+      }
+      
+      .boton{
+          font-weight: bolder;
+          font-size: 1em;
+          cursor: pointer;
+          border: 1px solid;
+          background-color: rgb(223, 240, 252);
+      }
+      
+      .boton:hover{
+          box-shadow: 2px 2px 2px gray;
+      }
+      
+      footer h4{
+          color: white;
+          text-align: center;
+      }
+      
+      #img_modelo_result{
+          /*width: 90%;
+          height: 100%; */
+          width: 600px;
+          height: 600px;
+          padding: 4px;
+          background-color: black;
+          color: white;
+          box-shadow: 3px 3px 3px gray;
+          object-fit: scale-down;
+      }
+      
+      #resultados_modelo{
+          margin: 0;
+      }
+      
+      .menu_de_lecturas{
+          width: 90%;
+          list-style-type: none;
+      }
+      
+      .opcion{
+          width:100%;
+          display: flex;
+          flex-align: row;
+      }
+      
+      .opc_consulta{
+          font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+          font-size: large;
+          background-color: #00495e;
+          cursor: pointer;
+          color: white;
+          margin: 5px;
+          padding: 2px 10px;
+      }
+
+      .cabecera{
+        width: 98%;
+        border-bottom: 2px solid blue;
+        color: white;
+        padding: 20px 10px;
+        margin:0;
+        background-color: black;
+      }
+
+      .cabecera2{
+        font-size:large;
+        font-weight: bolder;
+        width: auto;
+        border-bottom: 2px solid darkblue;
+        color: white;
+        padding: 10px;
+        margin:0;
+        background-color: darkcyan;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class = 'flex_column'>
+      <h3 class = 'cabecera'> Aplicación web de prueba - Ejecución de modelo Yolov5 en Flask </h3><br>
+
+      <div class = 'contenido flex_column' style="width: 90%;">
+        <fieldset class = 'flex_column'style="width: 90%;">
+            <legend class = 'cabecera2'> Resultado obtenido del procesamiento del modelo: </legend>
+
+            <img id = 'img_modelo_result' src='data:image/jpeg;base64,{{ imagen_base64 }}' alt=imagen_obtenida_de_Backend><br/><br/>
+
+            <h3 id = 'resultados_modelo' > Resultados del modelo: <br/>{{ cadena }} </h3><br/>
+        </fieldset>
+      </div>
+
+      <footer class = 'flex_column'><br>
+        <h4>AppWeb developed by Cesar Burgos. (2023)</h4><br><br/>
+      </footer>
+    </div>
+  </body>
+</html>
